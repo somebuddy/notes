@@ -1,36 +1,42 @@
 import {Component} from 'angular2/core';
-import {Box} from './note';
-import {NoteDetailComponent} from './note-details';
+import {Box} from './box';
+import {BoxDetailComponent} from './box-details';
+import {BoxService} from './box.service';
+import {OnInit} from 'angular2/core';
 
 @Component({
     selector: 'notes-app',
     template: `
       <h1>{{ title }}</h1>
       <h2>My Notes</h2>
-      <ul class="notes">
-        <li *ngFor="#note of notes"
-          [class.selected]="note === selectedNote"
-          (click)="onSelect(note)">
-          <span class="badge">{{note.id}}</span> {{note.title}}
+      <ul class="boxes">
+        <li *ngFor="#box of boxes"
+          [class.selected]="box === selectedBox"
+          (click)="onSelect(box)">
+          <span class="badge">{{box.id}}</span> {{box.title}}
         </li>
       </ul>
-      <note-detail [note]="selectedNote"></note-detail>
+      <box-detail [box]="selectedBox"></box-detail>
     `,
-    directives: [NoteDetailComponent]
+    directives: [BoxDetailComponent],
+    providers: [BoxService]
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = "Notes-taking";
-  public notes = NOTES;
-  selectedNote: Box;
-  onSelect(note: Box) {
-    this.selectedNote = note;
-  };
-}
+  boxes: Box[];
+  selectedBox: Box;
+  
+  constructor(private _boxService: BoxService) { }
+  
+  getBoxes() {
+    this._boxService.getBoxes().then(boxes => this.boxes = boxes);
+  }
+  
+  onSelect(box: Box) {
+    this.selectedBox = box;
+  }
 
-var NOTES: Box[] = [
-  { "id": 1, "title": "Sample"},
-  { "id": 2, "title": "Sample 2"},
-  { "id": 3, "title": "Sample 3"},
-  { "id": 4, "title": "Sample 4"},
-  { "id": 5, "title": "Sample 5"},
-]
+  ngOnInit() {
+    this.getBoxes();
+  }
+}
