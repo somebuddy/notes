@@ -1,5 +1,6 @@
-import {BOXES} from './mock-boxes';
 import {Injectable} from 'angular2/core';
+
+import {BOXES} from '../models/boxes.mock';
 
 @Injectable()
 export class BoxService {

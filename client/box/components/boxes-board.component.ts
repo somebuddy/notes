@@ -1,13 +1,13 @@
 import { Component, OnInit } from 'angular2/core';
 import { Router } from 'angular2/router';
-import {Box} from './box';
-import {BoxDetailComponent} from './box-detail.component';
-import {BoxService} from './box.service';
 
+import { Box } from '../models/box';
+import { BoxService } from '../services/box.service';
+import { BoxDetailComponent } from '../components/box-detail.component';
 
 @Component({
     selector: 'boxes',
-    templateUrl: 'boxes.component.html',
+    templateUrl: './box/components/boxes-board.component.html',
     directives: [BoxDetailComponent]
 })
 export class BoxesComponent implements OnInit {
@@ -22,7 +22,7 @@ export class BoxesComponent implements OnInit {
   getBoxes() {
     this._boxService.getBoxes().then(boxes => this.boxes = boxes);
   }
-  
+
   onSelect(box: Box) {
     this.selectedBox = box;
   }

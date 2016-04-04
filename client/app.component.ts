@@ -1,9 +1,10 @@
-import {Component} from 'angular2/core';
+import { Component } from 'angular2/core';
 import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from 'angular2/router';
-import {BoxService} from './box.service';
-import {BoxesComponent} from './boxes.component';
-import {SettingsComponent} from './settings.component';
-import {BoxDetailComponent} from './box-detail.component';
+
+import { BoxService } from './box/services/box.service';
+import { BoxesComponent } from './box/components/boxes-board.component';
+import { SettingsComponent } from './settings.component';
+import { BoxDetailComponent } from './box/components/box-detail.component';
 
 @Component({
   selector: 'notes-app',
