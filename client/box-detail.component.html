@@ -1,0 +1,9 @@
+<div *ngIf="box">
+  <h2>{{ box.title }} details!</h2>
+  <div><label>id: </label>{{ box.id }}</div>
+  <div>
+    <label>name: </label>
+    <textarea [(ngModel)]="box.title"></textarea>
+  </div>
+</div>
+<button (click)="goBack()">Back</button>

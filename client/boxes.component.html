@@ -1,0 +1,15 @@
+<h1>{{ title }}</h1>
+<h2>My Notes</h2>
+<ul class="boxes">
+  <li *ngFor="#box of boxes"
+    [class.selected]="box === selectedBox"
+    (click)="onSelect(box)">
+    <span class="badge">{{box.id}}</span> {{box.title}}
+  </li>
+</ul>
+<div *ngIf="selectedBox">
+  <h2>
+    {{selectedBox.title | uppercase}}
+  </h2>
+  <button (click)="gotoDetail(selectedBox)">View Details</button>
+</div>

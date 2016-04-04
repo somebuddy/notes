@@ -3,6 +3,7 @@ import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from 'angular2/route
 import {BoxService} from './box.service';
 import {BoxesComponent} from './boxes.component';
 import {SettingsComponent} from './settings.component';
+import {BoxDetailComponent} from './box-detail.component';
 
 @Component({
   selector: 'notes-app',
@@ -31,6 +32,11 @@ import {SettingsComponent} from './settings.component';
     path: '/settings',
     name: 'Settings',
     component: SettingsComponent
+  },
+  {
+    path: '/box/:id',
+    name: 'BoxDetail',
+    component: BoxDetailComponent
   }
 ])
 export class AppComponent {
