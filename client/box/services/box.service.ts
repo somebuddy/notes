@@ -1,6 +1,7 @@
-import {Injectable} from 'angular2/core';
+import { Injectable } from 'angular2/core';
 
-import {BOXES} from '../models/boxes.mock';
+import { BOXES } from '../models/boxes.mock';
+import { Box } from '../models/box';
 
 @Injectable()
 export class BoxService {
@@ -11,5 +12,8 @@ export class BoxService {
     return Promise.resolve(BOXES).then(
       boxes => boxes.filter(box => box.id === id)[0]
     );
+  }
+  addBox(box: Box) {
+    BOXES.push(box);
   }
 }

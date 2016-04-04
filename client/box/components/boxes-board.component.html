@@ -1,5 +1,7 @@
 <h1>{{ title }}</h1>
 <h2>My Notes</h2>
+<textarea [(ngModel)]="newBox.title"></textarea>
+<button (click)="addBox()">Save</button>
 <ul class="boxes">
   <li *ngFor="#box of boxes"
     [class.selected]="box === selectedBox"

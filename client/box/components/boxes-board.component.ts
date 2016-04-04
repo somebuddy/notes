@@ -12,6 +12,7 @@ import { BoxDetailComponent } from '../components/box-detail.component';
 })
 export class BoxesComponent implements OnInit {
   boxes: Box[];
+  newBox: Box;
   selectedBox: Box;
 
   constructor(
@@ -32,7 +33,15 @@ export class BoxesComponent implements OnInit {
     this._router.navigate(link);
   }
 
+  addBox() {
+    this._boxService.addBox(this.newBox);
+    this.newBox = new Box;
+    this.newBox.states = {};
+  }
+
   ngOnInit() {
+    this.newBox = new Box;
+    this.newBox.states = {};
     this.getBoxes();
   }
 }
