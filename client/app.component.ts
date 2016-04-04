@@ -1,13 +1,17 @@
 import {Component} from 'angular2/core';
 import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from 'angular2/router';
-import {BoxesComponent} from './boxes.component';
 import {BoxService} from './box.service';
+import {BoxesComponent} from './boxes.component';
+import {SettingsComponent} from './settings.component';
 
 @Component({
   selector: 'notes-app',
   template: `
     <h1>{{ title }}</h1>
-    <a [routerLink]="['Notes']">Notes</a>
+    <nav>
+      <a [routerLink]="['Notes']">Notes</a>
+      <a [routerLink]="['Settings']">Settings</a>
+    </nav>
     <router-outlet></router-outlet>
   `,
   directives: [ROUTER_DIRECTIVES],
@@ -20,7 +24,13 @@ import {BoxService} from './box.service';
   {
     path: '/notes',
     name: 'Notes',
-    component: BoxesComponent
+    component: BoxesComponent,
+    useAsDefault: true
+  },
+  {
+    path: '/settings',
+    name: 'Settings',
+    component: SettingsComponent
   }
 ])
 export class AppComponent {

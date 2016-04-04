@@ -23,13 +23,13 @@ import {OnInit} from 'angular2/core';
 export class BoxesComponent implements OnInit {
   boxes: Box[];
   selectedBox: Box;
-  
+
   constructor(private _boxService: BoxService) { }
-  
+
   getBoxes() {
     this._boxService.getBoxes().then(boxes => this.boxes = boxes);
   }
-  
+
   onSelect(box: Box) {
     this.selectedBox = box;
   }
