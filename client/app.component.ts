@@ -1,42 +1,28 @@
 import {Component} from 'angular2/core';
-import {Box} from './box';
-import {BoxDetailComponent} from './box-details';
+import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from 'angular2/router';
+import {BoxesComponent} from './boxes.component';
 import {BoxService} from './box.service';
-import {OnInit} from 'angular2/core';
 
 @Component({
-    selector: 'notes-app',
-    template: `
-      <h1>{{ title }}</h1>
-      <h2>My Notes</h2>
-      <ul class="boxes">
-        <li *ngFor="#box of boxes"
-          [class.selected]="box === selectedBox"
-          (click)="onSelect(box)">
-          <span class="badge">{{box.id}}</span> {{box.title}}
-        </li>
-      </ul>
-      <box-detail [box]="selectedBox"></box-detail>
-    `,
-    directives: [BoxDetailComponent],
-    providers: [BoxService]
+  selector: 'notes-app',
+  template: `
+    <h1>{{ title }}</h1>
+    <a [routerLink]="['Notes']">Notes</a>
+    <router-outlet></router-outlet>
+  `,
+  directives: [ROUTER_DIRECTIVES],
+  providers: [
+    ROUTER_PROVIDERS,
+    BoxService
+  ]
 })
-export class AppComponent implements OnInit {
+@RouteConfig([
+  {
+    path: '/notes',
+    name: 'Notes',
+    component: BoxesComponent
+  }
+])
+export class AppComponent {
   title = "Notes-taking";
-  boxes: Box[];
-  selectedBox: Box;
-  
-  constructor(private _boxService: BoxService) { }
-  
-  getBoxes() {
-    this._boxService.getBoxes().then(boxes => this.boxes = boxes);
-  }
-  
-  onSelect(box: Box) {
-    this.selectedBox = box;
-  }
-
-  ngOnInit() {
-    this.getBoxes();
-  }
 }
