@@ -12,6 +12,8 @@
     "rootDir": "./"
   },
   "exclude": [
+    ".c9",
+    ".git",
     "dist",
     "build",
     "node_modules",
