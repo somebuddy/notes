@@ -3,6 +3,7 @@
 <ul class="boxes">
   <li *ngFor="#box of boxes"
     [class.selected]="box === selectedBox"
+    [class.deleted]="box.states.deleted"
     (click)="onSelect(box)">
     <span class="badge">{{box.id}}</span> {{box.title}}
   </li>

@@ -1,4 +1,4 @@
-<div *ngIf="box">
+<div *ngIf="box" [class.deleted]="box.states.deleted">
   <h2>{{ box.title }} details!</h2>
   <div><label>id: </label>{{ box.id }}</div>
   <div>
