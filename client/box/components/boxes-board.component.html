@@ -3,15 +3,5 @@
 <textarea [(ngModel)]="newBox.title"></textarea>
 <button (click)="addBox()">Save</button>
 <ul class="boxes">
-  <box-widget *ngFor="#box of boxes"
-    [box]="box"
-    [class.selected]="box === selectedBox"
-    (click)="onSelect(box)">
-  </box-widget>
+  <box-widget *ngFor="#box of boxes" [box]="box"></box-widget>
 </ul>
-<div *ngIf="selectedBox">
-  <h2>
-    {{selectedBox.title | uppercase}}
-  </h2>
-  <button (click)="gotoDetail(selectedBox)">View Details</button>
-</div>

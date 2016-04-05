@@ -3,18 +3,16 @@ import { Router } from 'angular2/router';
 
 import { Box } from '../models/box';
 import { BoxService } from '../services/box.service';
-import { BoxViewComponent } from '../components/box-view.component';
 import { BoxWidgetComponent } from '../components/box-widget.component';
 
 @Component({
     selector: 'boxes',
     templateUrl: './box/components/boxes-board.component.html',
-    directives: [BoxViewComponent, BoxWidgetComponent]
+    directives: [BoxWidgetComponent]
 })
 export class BoxesBoardComponent implements OnInit {
   boxes: Box[];
   newBox: Box;
-  selectedBox: Box;
 
   constructor(
     private _router: Router,
@@ -25,24 +23,18 @@ export class BoxesBoardComponent implements OnInit {
     this._boxService.getBoxes().then(boxes => this.boxes = boxes);
   }
 
-  onSelect(box: Box) {
-    this.selectedBox = box;
-  }
-
-  gotoDetail(box: Box) {
-    let link = ['BoxDetail', { id: box.id }];
-    this._router.navigate(link);
+  _initNewBox() {
+    this.newBox = new Box;
+    this.newBox.states = {};
   }
 
   addBox() {
     this._boxService.addBox(this.newBox);
-    this.newBox = new Box;
-    this.newBox.states = {};
+    this._initNewBox();
   }
 
   ngOnInit() {
-    this.newBox = new Box;
-    this.newBox.states = {};
+    this._initNewBox();
     this.getBoxes();
   }
 }
