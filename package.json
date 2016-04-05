@@ -2,10 +2,9 @@
   "name": "notes",
   "version": "0.0.1",
   "scripts": {
-    "start": "concurrently \"npm run tsc:w\" \"npm run lite\" ",
+    "start": "concurrently \"npm run tsc:w\" \"gulp serve\" ",
     "tsc": "tsc",
     "tsc:w": "tsc -w",
-    "lite": "lite-server -c \"./configs/bs-config.json\"",
     "typings": "typings",
     "postinstall": "typings install"
   },
@@ -20,8 +19,10 @@
     "zone.js": "0.6.8"
   },
   "devDependencies": {
+    "browser-sync": "^2.11.2",
     "concurrently": "^2.0.0",
-    "lite-server": "^2.1.0",
+    "gulp": "^3.9.1",
+    "gulp-typescript": "^2.12.2",
     "typescript": "^1.8.9",
     "typings":"^0.7.11"
   }
