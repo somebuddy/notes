@@ -4,11 +4,12 @@ import { Router } from 'angular2/router';
 import { Box } from '../models/box';
 import { BoxService } from '../services/box.service';
 import { BoxDetailComponent } from '../components/box-detail.component';
+import { BoxWidgetComponent } from '../components/box-widget.component';
 
 @Component({
     selector: 'boxes',
     templateUrl: './box/components/boxes-board.component.html',
-    directives: [BoxDetailComponent]
+    directives: [BoxDetailComponent, BoxWidgetComponent]
 })
 export class BoxesComponent implements OnInit {
   boxes: Box[];

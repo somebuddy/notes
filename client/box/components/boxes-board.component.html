@@ -3,12 +3,11 @@
 <textarea [(ngModel)]="newBox.title"></textarea>
 <button (click)="addBox()">Save</button>
 <ul class="boxes">
-  <li *ngFor="#box of boxes"
+  <box-widget *ngFor="#box of boxes"
+    [box]="box"
     [class.selected]="box === selectedBox"
-    [class.deleted]="box.states.deleted"
     (click)="onSelect(box)">
-    <span class="badge">{{box.id}}</span> {{box.title}}
-  </li>
+  </box-widget>
 </ul>
 <div *ngIf="selectedBox">
   <h2>
