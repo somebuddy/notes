@@ -3,13 +3,13 @@ import { Router } from 'angular2/router';
 
 import { Box } from '../models/box';
 import { BoxService } from '../services/box.service';
-import { BoxDetailComponent } from '../components/box-detail.component';
+import { BoxViewComponent } from '../components/box-view.component';
 import { BoxWidgetComponent } from '../components/box-widget.component';
 
 @Component({
     selector: 'boxes',
     templateUrl: './box/components/boxes-board.component.html',
-    directives: [BoxDetailComponent, BoxWidgetComponent]
+    directives: [BoxViewComponent, BoxWidgetComponent]
 })
 export class BoxesBoardComponent implements OnInit {
   boxes: Box[];

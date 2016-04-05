@@ -1,3 +1,3 @@
 export { BoxService } from './services/box.service';
-export { BoxDetailComponent } from './components/box-detail.component';
+export { BoxViewComponent } from './components/box-view.component';
 export { BoxesBoardComponent } from './components/boxes-board.component';

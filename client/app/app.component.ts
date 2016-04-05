@@ -1,7 +1,7 @@
 import { Component } from 'angular2/core';
 import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from 'angular2/router';
 
-import { BoxService, BoxesBoardComponent, BoxDetailComponent } from '../box/core';
+import { BoxService, BoxesBoardComponent, BoxViewComponent } from '../box/core';
 
 import { SettingsComponent } from './settings.component';
 
@@ -36,7 +36,7 @@ import { SettingsComponent } from './settings.component';
   {
     path: '/box/:id',
     name: 'BoxDetail',
-    component: BoxDetailComponent
+    component: BoxViewComponent
   }
 ])
 export class AppComponent {

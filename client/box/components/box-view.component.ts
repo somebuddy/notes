@@ -5,11 +5,11 @@ import { Box } from '../models/box';
 import { BoxService } from '../services/box.service';
 
 @Component({
-  selector: 'box-detail',
-  templateUrl: './box/components/box-detail.component.html',
+  selector: 'box-view',
+  templateUrl: './box/components/box-view.component.html',
   directives: [RouterLink]
 })
-export class BoxDetailComponent implements OnInit {
+export class BoxViewComponent implements OnInit {
   box: Box;
 
   constructor(
