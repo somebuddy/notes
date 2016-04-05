@@ -1,12 +1,13 @@
 import { Component, Input } from 'angular2/core';
-import { Router } from 'angular2/router';
+import { Router, RouterLink } from 'angular2/router';
 
 import { Box } from '../models/box';
 import { BoxService } from '../services/box.service';
 
 @Component({
   selector: 'box-widget',
-  templateUrl: './box/components/box-widget.component.html'
+  templateUrl: './box/components/box-widget.component.html',
+  directives: [RouterLink]
 })
 export class BoxWidgetComponent {
   @Input() box: Box;

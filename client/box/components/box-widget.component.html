@@ -1,15 +1,49 @@
-<li class="box-widget" [class.deleted]="box.states.deleted">
-  <h3 class="title">
-    {{ box.title }}
-    <small *ngIf="box.states.deleted">(deleted)</small>
-  </h3>
-  <div>
-    <small>
-      <strong>Created At:</strong> {{ box.createdAt | date:'medium' }}
-      <strong>Last updated:</strong> {{ box.updatedAt | date:'medium' }}
-    </small>
+<li class="box box-widget"
+  [class.deleted]="box.states.deleted"
+  [ngClass]="'box-' + box.boxType">
+
+  <!-- box header -->
+  <div class="row main">
+    <span class="title">{{ box.title }}</span>
+    <span class="badges">
+      <span class="badge danger" *ngIf="box.states.deleted">(deleted)</span>
+    </span>
   </div>
-  <button class="delete-button" (click)="deleteBox()">Delete</button>
-  <button class="details-button" (click)="gotoDetail()">View details</button>
+
+  <!-- box content component -->
+  <div class="secondary content">
+    <div class="content">{{ box.content }}</div>
+  </div>
+
+  <!-- box content component -->
+  <div class="row secondary stats">
+    <span class="variable created-at-date">
+      <span class="title">Created At:</span>
+      <span class="value">{{ box.createdAt | date:'medium' }}</span>
+    </span>
+    <span class="separator"> | </span>
+    <span class="variable updated-at-date">
+      <span class="title">Last updated:</span>
+      <span class="value">{{ box.updatedAt | date:'medium' }}</span>
+    </span>
+  </div>
+
+  <!-- box relation components -->
+  <div class="row secondary references parent" *ngIf="box.parent">
+    <div class="label">Parent: </div>
+    <a class="reference parent" [routerLink]="['BoxDetail', {id: box.parent}]">{{ box.parent }}</a>
+  </div>
+  <div class="row secondary references children"*ngIf="box.children?.length">
+    <div class="label">Children: </div>
+    <a class="reference child"
+      *ngFor="#child of box.children"
+      [routerLink]="['BoxDetail', {id: child}]">{{ child }}</a>
+  </div>
+
+  <!-- box actions component -->
+  <div class="actions">
+    <button class="delete-button" (click)="deleteBox()">Delete</button>
+    <button class="details-button" (click)="gotoDetail()">View details</button>
+  </div>
   <hr>
 </li>
