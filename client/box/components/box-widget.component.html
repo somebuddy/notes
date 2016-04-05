@@ -1,0 +1,9 @@
+<li class="box-widget" [class.deleted]="box.states.deleted">
+  <h3 class="title">
+    {{ box.title }}
+    <small *ngIf="box.states.deleted">(deleted)</small>
+  </h3>
+  <button class="delete-button" (click)="deleteBox()">Delete</button>
+  <button class="details-button" (click)="gotoDetail()">View details</button>
+  <hr>
+</li>
