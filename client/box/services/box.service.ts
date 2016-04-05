@@ -16,4 +16,7 @@ export class BoxService {
   addBox(box: Box) {
     BOXES.push(box);
   }
+  deleteBox(id: number) {
+    this.getBox(id).then(box => box.states['deleted'] = true);
+  }
 }
