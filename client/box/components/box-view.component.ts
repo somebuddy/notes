@@ -26,4 +26,7 @@ export class BoxViewComponent implements OnInit {
   goBack() {
     window.history.back();
   }
+
+  deleteBox() { this._boxService.deleteBox(this.box.id); }
+  restoreBox() { this._boxService.restoreBox(this.box.id); }
 }

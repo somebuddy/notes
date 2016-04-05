@@ -48,7 +48,7 @@
 
   <!-- box actions component -->
   <div class="actions">
-    <button class="delete-button" (click)="deleteBox()">Delete</button>
-    <button class="details-button" (click)="gotoDetail()">View details</button>
+    <button class="delete-button" *ngIf="!box.states?.deleted" (click)="deleteBox()">Delete</button>
+    <button class="restore-button" *ngIf="box.states?.deleted" (click)="restoreBox()">Restore</button>
   </div>
 </div>

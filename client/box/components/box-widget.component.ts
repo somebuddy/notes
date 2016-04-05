@@ -11,7 +11,7 @@ import { BoxService } from '../services/box.service';
 })
 export class BoxWidgetComponent {
   @Input() box: Box;
-  
+
   constructor(
     private _router: Router,
     private _boxService: BoxService
@@ -21,8 +21,7 @@ export class BoxWidgetComponent {
     let link = ['BoxDetail', { id: this.box.id }];
     this._router.navigate(link);
   }
-  
-  deleteBox() {
-    this._boxService.deleteBox(this.box.id);
-  }
+
+  deleteBox() { this._boxService.deleteBox(this.box.id); }
+  restoreBox() { this._boxService.restoreBox(this.box.id); }
 }

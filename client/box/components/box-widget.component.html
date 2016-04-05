@@ -1,12 +1,12 @@
 <li class="box box-widget"
-  [class.deleted]="box.states.deleted"
+  [class.deleted]="box.states?.deleted"
   [ngClass]="'box-' + box.boxType">
 
   <!-- box header -->
   <div class="row main">
     <span class="title">{{ box.title }}</span>
     <span class="badges">
-      <span class="badge danger" *ngIf="box.states.deleted">(deleted)</span>
+      <span class="badge danger" *ngIf="box.states?.deleted">(deleted)</span>
     </span>
   </div>
 
@@ -42,7 +42,8 @@
 
   <!-- box actions component -->
   <div class="actions">
-    <button class="delete-button" (click)="deleteBox()">Delete</button>
+    <button class="delete-button" *ngIf="!box.states?.deleted" (click)="deleteBox()">Delete</button>
+    <button class="restore-button" *ngIf="box.states?.deleted" (click)="restoreBox()">Restore</button>
     <button class="details-button" (click)="gotoDetail()">View details</button>
   </div>
   <hr>
