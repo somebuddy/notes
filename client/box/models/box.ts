@@ -5,8 +5,8 @@ export class Box {
   content: string | string[] | Object;
   states: Object;
 
-  parent: string;
-  children: string[];
+  parent: string | number;
+  children: number[] | string[];
 
   createdAt: Date;
   updatedAt: Date;

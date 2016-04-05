@@ -4,15 +4,18 @@ import { Router } from 'angular2/router';
 import { Box } from '../models/box';
 import { BoxService } from '../services/box.service';
 import { BoxWidgetComponent } from '../components/box-widget.component';
+import { HideDeletedBoxesPipe } from '../pipes/hide-deleted.pipe';
 
 @Component({
     selector: 'boxes',
     templateUrl: './box/components/boxes-board.component.html',
-    directives: [BoxWidgetComponent]
+    directives: [BoxWidgetComponent],
+    pipes: [HideDeletedBoxesPipe]
 })
 export class BoxesBoardComponent implements OnInit {
   boxes: Box[];
   newBox: Box;
+  filterDeleted: boolean = true;
 
   constructor(
     private _router: Router,

@@ -2,6 +2,11 @@
 <h2>My Notes</h2>
 <textarea [(ngModel)]="newBox.title"></textarea>
 <button (click)="addBox()">Save</button>
+<header>
+  <label for="filterDeleted">
+    <input id="filterDeleted" name="filterDeleted" type="checkbox" [(ngModel)]="filterDeleted" />Hide Deleted
+  </label>
+</header>
 <ul class="boxes">
-  <box-widget *ngFor="#box of boxes" [box]="box"></box-widget>
+  <box-widget *ngFor="#box of (boxes | hideDeleted: filterDeleted)" [box]="box"></box-widget>
 </ul>
