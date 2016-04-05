@@ -3,6 +3,12 @@
     {{ box.title }}
     <small *ngIf="box.states.deleted">(deleted)</small>
   </h3>
+  <div>
+    <small>
+      <strong>Created At:</strong> {{ box.createdAt | date:'medium' }}
+      <strong>Last updated:</strong> {{ box.updatedAt | date:'medium' }}
+    </small>
+  </div>
   <button class="delete-button" (click)="deleteBox()">Delete</button>
   <button class="details-button" (click)="gotoDetail()">View details</button>
   <hr>
