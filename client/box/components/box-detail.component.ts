@@ -1,15 +1,16 @@
 import { Component, Input, OnInit } from 'angular2/core';
-import { RouteParams } from 'angular2/router';
+import { RouteParams, RouterLink } from 'angular2/router';
 
 import { Box } from '../models/box';
 import { BoxService } from '../services/box.service';
 
 @Component({
   selector: 'box-detail',
-  templateUrl: './box/components/box-detail.component.html'
+  templateUrl: './box/components/box-detail.component.html',
+  directives: [RouterLink]
 })
 export class BoxDetailComponent implements OnInit {
-  @Input() box: Box;
+  box: Box;
 
   constructor(
     private _boxService: BoxService,
