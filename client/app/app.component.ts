@@ -1,7 +1,7 @@
 import { Component } from 'angular2/core';
 import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from 'angular2/router';
 
-import { BoxService, BoxesComponent, BoxDetailComponent } from '../box/core';
+import { BoxService, BoxesBoardComponent, BoxDetailComponent } from '../box/core';
 
 import { SettingsComponent } from './settings.component';
 
@@ -25,7 +25,7 @@ import { SettingsComponent } from './settings.component';
   {
     path: '/notes',
     name: 'Notes',
-    component: BoxesComponent,
+    component: BoxesBoardComponent,
     useAsDefault: true
   },
   {

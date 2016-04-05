@@ -11,7 +11,7 @@ import { BoxWidgetComponent } from '../components/box-widget.component';
     templateUrl: './box/components/boxes-board.component.html',
     directives: [BoxDetailComponent, BoxWidgetComponent]
 })
-export class BoxesComponent implements OnInit {
+export class BoxesBoardComponent implements OnInit {
   boxes: Box[];
   newBox: Box;
   selectedBox: Box;
