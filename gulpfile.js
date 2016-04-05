@@ -1,7 +1,7 @@
 var gulp = require('gulp');
 
 var browserSync = require('browser-sync').create();
-var serveConfig = require('./configs/bs-config.json');
+var serveConfig = require('./configs/bs-config.js');
 
 gulp.task('serve', function() {
   console.log('Gulp serving...');

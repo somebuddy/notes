@@ -1,0 +1,31 @@
+historyApiFallback = require('connect-history-api-fallback');
+
+module.exports = {
+  "port": 8080,
+  "files": [
+    "./client/**/*.{html,htm,css,js}",
+    "./build/**/*.{js,js.map}",
+    "./styles/**/*.{css}",
+    "./node_modules/**/*.{html,htm,css,js}"
+  ],
+  "server": {
+    "baseDir": "./client",
+    "routes": {
+        "/node_modules": "node_modules",
+        "/build": "build",
+        "/styles": "styles",
+        "/assets": "public"
+    }
+  },
+  "watchOptions": {
+    "usePolling": true,
+    "interval": 2000,
+    "ignored": [
+      "node_modules/",
+      ".git/"
+    ]
+  },
+  "codeSync": true,
+  "injectChanges": true,
+   middleware: [ historyApiFallback() ]
+}
