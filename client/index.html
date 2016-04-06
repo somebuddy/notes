@@ -32,8 +32,7 @@
           }
         }
       });
-      System.paths['client/*'] = 'build/client/*.js';
-      System.import('client/main')
+      System.import('main')
             .then(null, console.error.bind(console));
     </script>
   </head>
