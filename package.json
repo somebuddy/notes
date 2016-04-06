@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "scripts": {
     "start": "concurrently \"npm run tsc:w\" \"gulp serve\" ",
-    "tsc": "tsc",
+    "tsc": "gulp build:client",
     "tsc:w": "tsc -w",
     "typings": "typings",
     "postinstall": "typings install"
