@@ -2,8 +2,7 @@
   "name": "notes",
   "version": "0.0.1",
   "scripts": {
-    "start": "concurrently \"npm run tsc:w\" \"gulp serve\" ",
-    "tsc": "gulp build:client",
+    "start": "gulp",
     "tsc:w": "tsc -w",
     "typings": "typings",
     "postinstall": "typings install"
