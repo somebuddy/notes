@@ -1,0 +1,3 @@
+[submodule "styles/box-ui"]
+	path = styles/box-ui
+	url = git@github.com:somebuddy/box-ui.git
