@@ -8,8 +8,8 @@ module.exports = {
   "server": {
     "baseDir": "./build/client/",
     "routes": {
-        "/node_modules": "node_modules",
-        "/assets": "public",
+        "/node_modules": "./node_modules",
+        "/assets": "./public",
         "/styles": "./build/styles"
     }
   },
