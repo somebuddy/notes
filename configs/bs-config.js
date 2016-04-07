@@ -3,8 +3,7 @@ var historyApiFallback = require('connect-history-api-fallback');
 module.exports = {
   "port": 8080,
   "files": [
-    "./build/client/**/*",
-    "./node_modules/**/*.{html,htm,css,js}"
+    "build/**/*"
   ],
   "server": {
     "baseDir": "./build/client/",
@@ -17,12 +16,8 @@ module.exports = {
   "watchOptions": {
     "usePolling": true,
     "interval": 2000,
-    "ignored": [
-      "node_modules/",
-      ".git/"
-    ]
   },
   "codeSync": true,
   "injectChanges": true,
    middleware: [ historyApiFallback() ]
-}
+};
