@@ -25,6 +25,7 @@
     "gulp": "^3.9.1",
     "gulp-sass": "^2.2.0",
     "gulp-typescript": "^2.12.2",
+    "jasmine-core": "2.4.1",
     "typescript": "^1.8.9",
     "typings": "^0.7.11"
   }
