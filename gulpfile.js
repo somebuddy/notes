@@ -7,10 +7,10 @@ var browserSync = require('browser-sync').create();
 var serveConfig = require('./configs/bs-config.js');
 
 var excluded_files = [
-  '!./node_modules/**/*',
-  '!./typings/**/*',
-  '!./.c9/**/*',
-  '!./.git/**/*',
+  '!./node_modules/*',
+  '!./typings/*',
+  '!./.c9/*',
+  '!./.git/*',
 ];
 
 var templateFiles = ['./client/**/*.html'].concat(excluded_files);
