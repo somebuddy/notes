@@ -1,5 +1,10 @@
 @import 'box-ui/styles/box-ui';
 
+.page > nav {
+  background: #555;
+  color: white;
+}
+
 li.selected {
   color: orangered;
 }
