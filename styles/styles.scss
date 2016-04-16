@@ -1,7 +1,13 @@
+$body-font-weight: 400;
+
 @import 'box-ui/styles/box-ui';
 
 .page > nav {
   background: #555;
+  color: white;
+}
+.page > header, .page .page-header {
+  background: #d50000;
   color: white;
 }
 
