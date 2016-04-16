@@ -1,0 +1,17 @@
+<main class="page">
+  <nav class="navbar">
+    <a class="brand" href="/">
+      <div class="icon">[ &nbsp; ]</div>
+      <div class="name">Notes</div>
+    </a>
+    <div class="nav-list collapsed">
+      <div class="menu hover-to-arrow-down"><div class="lines"></div></div>
+      <a [routerLink]="['Notes']">Notes</a>
+      <a [routerLink]="['Settings']">Settings</a>
+    </div>
+  </nav>
+  <header class="page-header">
+    {{ title }}
+  </header>
+  <router-outlet></router-outlet>
+</main>

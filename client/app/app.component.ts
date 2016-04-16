@@ -7,14 +7,7 @@ import { SettingsComponent } from './settings.component';
 
 @Component({
   selector: 'notes-app',
-  template: `
-    <h1>{{ title }}</h1>
-    <nav>
-      <a [routerLink]="['Notes']">Notes</a>
-      <a [routerLink]="['Settings']">Settings</a>
-    </nav>
-    <router-outlet></router-outlet>
-  `,
+  templateUrl: 'app/app.component.html',
   directives: [ROUTER_DIRECTIVES],
   providers: [
     ROUTER_PROVIDERS,

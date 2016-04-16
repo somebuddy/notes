@@ -9,6 +9,7 @@ import { HideDeletedBoxesPipe } from '../pipes/hide-deleted.pipe';
 @Component({
     selector: 'boxes',
     templateUrl: './box/components/boxes-board.component.html',
+    host: { 'class': 'page-content' },
     directives: [BoxWidgetComponent],
     pipes: [HideDeletedBoxesPipe]
 })

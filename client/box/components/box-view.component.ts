@@ -7,7 +7,8 @@ import { BoxService } from '../services/box.service';
 @Component({
   selector: 'box-view',
   templateUrl: './box/components/box-view.component.html',
-  directives: [RouterLink]
+  directives: [RouterLink],
+  host: { 'class': 'page-content' }
 })
 export class BoxViewComponent implements OnInit {
   box: Box;
