@@ -1,14 +1,16 @@
 <main class="page">
-  <nav class="navbar">
+  <nav class="navbar dark-gray">
     <a class="brand" href="/">
       <div class="icon">[ &nbsp; ]</div>
       <div class="name">Notes</div>
     </a>
-    <div class="nav-list collapsed">
-      <div class="menu hover-to-arrow-down"><div class="lines"></div></div>
-      <a [routerLink]="['Notes']">Notes</a>
-      <a [routerLink]="['Settings']">Settings</a>
-    </div>
+    <div class="filler"></div>
+    <div class="collapse-button collapse-on-tablet"><div class="hamburger-button"><div class="lines"></div></div></div>
+    <ul class="nav-list">
+      <li><a [routerLink]="['Notes']">Notes</a></li>
+      <li><a [routerLink]="['Settings']">Settings</a></li>
+    </ul>
+    <div class="row-button toggle-button"><i class="fa fa-cog"></i></div>
   </nav>
   <header class="page-header">
     {{ title }}
